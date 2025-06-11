@@ -1,4 +1,3 @@
-// task.test.js
 const { createTask, updateTask , deleteTask} = require('../task');
 
 describe('createTask function', () => {
@@ -43,7 +42,6 @@ describe('updateTask function', () => {
 
 describe('deleteTask function', () => {
   test('should remove the task with the given id from the list', () => {
-    // 1) Buat dua task
     const task1 = createTask({
       title: 'Tugas 1',
       description: 'Desc 1',
@@ -57,17 +55,12 @@ describe('deleteTask function', () => {
       status: 'to-do',
     });
 
-    // 2) Masukkan ke array
     const tasks = [task1, task2];
 
-    // 3) Panggil deleteTask
     const remaining = deleteTask(tasks, task1.id);
 
-    // 4) Ekspektasi
     expect(remaining).toHaveLength(1);
     expect(remaining[0].id).toBe(task2.id);
   });
 });
 
-
-// nah coba kamu baca ketentuan tugas nya ini, apakah ada yang belum diterapin di codingan? kecuali presentasi, upload ke git dan deploy ya, ini belakangan saja. 

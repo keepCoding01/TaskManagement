@@ -1,4 +1,3 @@
-// task.js
 
 let lastId = 0;
 
@@ -24,12 +23,10 @@ function deleteTask(tasks, id) {
   return tasks.filter(t => t.id !== id);
 }
 
-// Simpan array tasks ke localStorage
 function saveTasks(tasks) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Load array tasks dari localStorage, kembalikan array kosong kalau belum ada
 function loadTasks() {
   const tasksJSON = localStorage.getItem('tasks');
   if (!tasksJSON) return [];
